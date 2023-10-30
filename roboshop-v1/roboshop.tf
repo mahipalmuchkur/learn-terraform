@@ -68,16 +68,6 @@ resource "aws_instance" "mysql" {
   }
 }
 
-resource "aws_instance" "redis" {
-  ami           = "ami-03265a0778a880afb"
-  instance_type = "t3.small"
-  vpc_security_group_ids = [ "sg-08a14ab1911d86db6" ]
-
-  tags = {
-    Name = "redis"
-  }
-}
-
 resource "aws_instance" "shipping" {
   ami           = "ami-03265a0778a880afb"
   instance_type = "t3.small"

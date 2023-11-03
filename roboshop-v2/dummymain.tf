@@ -24,11 +24,12 @@ variable "components" {
   shipping  = {name = "shipping-dev" }
   rabbitmq  = { name = "rabbitmq-dev" }
   payment   = { name = "payment-dev" }
-  dispatch  = {name = "dispatch-dev" }
+  dispatch  = { name = "dispatch-dev" }
 
 }
 
 resource "aws_instance" "instance" {
+
   for_each = var.components
   ami           = var.ami
   instance_type = var.instance

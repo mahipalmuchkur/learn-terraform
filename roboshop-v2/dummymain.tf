@@ -14,18 +14,19 @@ variable "zone_id" {
   default = "Z036242411JCZSVIGSVSH"
 }
 variable "components" {
-  frontend  = { name = "frontend-dev" }
-  mongodb   = { name = "mongodb-dev" }
-  catalogue = { name = "catalogue-dev" }
-  redis     = { name = "redis-dev" }
-  user      = { name = "user-dev" }
-  cart      = { cart = "cart-dev" }
-  mysql     = {name = "mysql-dev" }
-  shipping  = {name = "shipping-dev" }
-  rabbitmq  = { name = "rabbitmq-dev" }
-  payment   = { name = "payment-dev" }
-  dispatch  = { name = "dispatch-dev" }
-
+  default = {
+    frontend  = { name = "frontend-dev" }
+    mongodb   = { name = "mongodb-dev" }
+    catalogue = { name = "catalogue-dev" }
+    redis     = { name = "redis-dev" }
+    user      = { name = "user-dev" }
+    cart      = { cart = "cart-dev" }
+    mysql     = {name = "mysql-dev" }
+    shipping  = {name = "shipping-dev" }
+    rabbitmq  = { name = "rabbitmq-dev" }
+    payment   = { name = "payment-dev" }
+    dispatch  = { name = "dispatch-dev" }
+  }
 }
 
 resource "aws_instance" "instance" {

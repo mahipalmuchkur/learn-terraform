@@ -23,8 +23,8 @@ variable "components" {
   mysql     = {name = "mysql-dev" }
   shipping  = {name = "shipping-dev" }
   rabbitmq  = { name = "rabbitmq-dev" }
-  payment   = { name = "payment" }
-  dispatch  = {name = "dispatch" }
+  payment   = { name = "payment-dev" }
+  dispatch  = {name = "dispatch-dev" }
 
 }
 

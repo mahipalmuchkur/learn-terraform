@@ -26,7 +26,6 @@ variable "components" {
     shipping    = { name = "shipping-dev" }
     rabbitmq    = { name = "rabbitmq-dev" }
     payment     = { name = "payment-dev" }
-    dispatch    = { name = "dispatch-dev" }
   }
 }
 

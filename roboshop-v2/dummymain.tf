@@ -2,7 +2,7 @@ variable "ami" {
   default = "ami-03265a0778a880afb"
 }
 
-variable "instance" {
+variable "instance_type" {
   default = "t3.small"
 }
 
@@ -30,10 +30,9 @@ variable "components" {
 }
 
 resource "aws_instance" "instance" {
-
   for_each = var.components
   ami           = var.ami
-  instance_type = var.instance
+  instance_type = var.instance_type
   vpc_security_group_ids = var.security_group
 
   tags = {

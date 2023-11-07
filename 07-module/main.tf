@@ -8,5 +8,5 @@ output "test" {
 }
 
 variable "instance_type" {
-  default = "t3.small"
+  default = "t3.micro"
 }

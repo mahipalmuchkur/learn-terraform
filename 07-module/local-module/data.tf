@@ -4,6 +4,9 @@ data "aws_ami" "ami" {
   owners      = ["617766776617"]
 }
 
+output "ami" {
+  value = "data.aws_ami.ami"
+}
 
 resource "aws_instance" "instance" {
   ami           = data.aws_ami.ami.id
@@ -12,7 +15,3 @@ resource "aws_instance" "instance" {
 }
 
 variable "instance_type" {}
-
-output "ami" {
-  value = "data.aws_ami.ami"
-}

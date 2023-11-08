@@ -17,6 +17,8 @@ resource "aws_route53_record" "dev-ns" {
 }
 
 resource "null_resource" "ansible" {
+
+  depends_on = [aws_route53_record]
   provisioner "local-exec" {
     command = <<EOF
 cd /home/centos/learn-ansible

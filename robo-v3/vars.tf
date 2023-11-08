@@ -4,7 +4,7 @@ variable "zone_id" {
 variable "security_group" {
   default = ["sg-08a14ab1911d86db6"]
 }
-
+#checking
 variable "components" {
   default = {
     frontend = {

@@ -8,7 +8,7 @@ resource "aws_instance" "instance" {
   }
 }
 
-resource "aws_route53_record" "dev-ns" {
+resource "aws_route53_record" "record" {
   zone_id = var.zone_id
   name    = "${var.name}-dev.mdevopsb74.online"
   type    = "A"
@@ -18,7 +18,7 @@ resource "aws_route53_record" "dev-ns" {
 
 resource "null_resource" "ansible" {
 
-  depends_on = [aws_route53_record]
+  depends_on = [aws_route53_record.record]
   provisioner "local-exec" {
     command = <<EOF
 cd /home/centos/learn-ansible

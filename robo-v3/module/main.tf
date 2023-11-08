@@ -18,13 +18,16 @@ resource "aws_route53_record" "record" {
 
 resource "null_resource" "ansible" {
 
-  depends_on = [aws_route53_record.record]
+  depends_on = [
+    aws_route53_record.record
+  ]
+
   provisioner "local-exec" {
     command = <<EOF
 cd /home/centos/learn-ansible
 git pull
 sleep 30
-ansible-palybook -i ${var.name}-dev.mdevopsb74.online, main.yml -e ansible_user=centos -e ansible_password=DevOps321 -e component=${var.name}
-    EOF
+ansible-playbook -i ${var.name}-dev.mdevopsb74.online, main.yml -e ansible_user=centos -e ansible_password=DevOps321 -e component=${var.name}
+EOF
   }
 }

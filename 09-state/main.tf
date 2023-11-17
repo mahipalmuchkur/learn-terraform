@@ -7,7 +7,7 @@ terraform {
 }
 
 variable "test" {
-  default = 'Hello Terraform'
+  default = "Hello Terraform"
 }
 
 output "test" {
